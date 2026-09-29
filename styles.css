@@ -1,0 +1,25 @@
+:root { color-scheme: dark; }
+* { box-sizing: border-box; }
+body { margin: 0; min-height: 100vh; overflow-x: hidden; background: radial-gradient(circle at 50% 0%, #234cab 0%, #0c1951 45%, #060c2d 100%); color: #fff; font-family: Nunito, sans-serif; }
+body::before { content: ""; position: fixed; inset: 0; opacity: .17; pointer-events: none; background-image: linear-gradient(125deg, transparent 48%, #fff 49%, transparent 50%); background-size: 34px 34px; }
+.game-shell { min-height: 100vh; display: grid; place-items: center; align-content: center; gap: 18px; padding: 24px; }
+.game-card { width: min(1100px, 100%); position: relative; overflow: hidden; border: 4px solid #75e7ff; border-radius: 24px; box-shadow: 0 0 0 5px #102665, 0 26px 70px #01051a; background: #4acbea; }
+canvas { display: block; width: 100%; height: auto; aspect-ratio: 16 / 9; image-rendering: crisp-edges; }
+.hud { height: 82px; position: absolute; z-index: 4; inset: 0 0 auto; display: flex; align-items: center; padding: 11px 22px; background: linear-gradient(180deg, rgba(6,20,81,.86), rgba(6,20,81,.35), transparent); text-shadow: 2px 2px 0 #07123f; }
+.brand { line-height: .72; color: #f5fcff; font-family: "Barlow Condensed", sans-serif; font-size: clamp(21px, 3.1vw, 35px); font-weight: 800; font-style: italic; letter-spacing: -1px; transform: skew(-7deg); }
+.brand span { display: block; color: #ffdd29; font-size: .53em; letter-spacing: 2px; }
+.stats { display: flex; margin-left: auto; gap: clamp(12px, 3vw, 38px); text-align: right; }
+.stats small { color: #a8eaff; display: block; font-size: 9px; font-weight: 900; letter-spacing: 1.2px; }
+.stats strong { font-family: "Barlow Condensed", sans-serif; font-size: clamp(18px, 2.4vw, 28px); letter-spacing: 1px; }
+.sound-button { margin-left: 17px; border: 0; width: 34px; height: 34px; border-radius: 50%; background: #ffdc25; color: #142257; font-size: 19px; font-weight: bold; cursor: pointer; box-shadow: inset 0 -3px #e99d17; }
+.overlay { position: absolute; z-index: 6; inset: 0; display: grid; place-content: center; justify-items: center; gap: 14px; text-align: center; background: radial-gradient(circle, rgba(20,82,167,.35), rgba(4,8,44,.55)); transition: opacity .35s, visibility .35s; }
+.overlay.hidden { opacity: 0; visibility: hidden; pointer-events: none; }
+.title-mark { font-family: "Barlow Condensed", sans-serif; font-style: italic; font-weight: 800; font-size: clamp(50px, 10vw, 100px); line-height: .64; letter-spacing: -3px; color: #fff; text-shadow: 4px 5px 0 #e5252c, 8px 9px 0 #0c1c68; transform: skew(-8deg); }
+.title-mark em { color: #ffdc25; font-style: italic; }
+.overlay p { margin: 8px 0 0; font-size: clamp(10px, 1.6vw, 16px); letter-spacing: 2px; text-shadow: 2px 2px #07123f; }
+.overlay button { border: 0; border-radius: 50px; padding: 12px 27px 13px; background: #ffdc25; box-shadow: inset 0 -5px #e8a312, 0 5px 0 #102160; color: #122461; font: 900 20px "Barlow Condensed", sans-serif; letter-spacing: 1px; cursor: pointer; transition: transform .15s; }
+.overlay button:hover { transform: translateY(-2px) scale(1.03); }.overlay button span { font-size: 24px; margin-left: 5px; }
+.how-to { font-size: 11px; letter-spacing: .6px; } kbd { border-radius: 3px; padding: 3px 5px; background: #fff; color: #15245d; font: 900 11px Nunito; }
+.mobile-controls { display: none; position: absolute; z-index: 5; bottom: 13px; left: 15px; right: 15px; justify-content: space-between; align-items: end; pointer-events: none; }.mobile-controls button { pointer-events: auto; border: 0; color: #fff; background: rgba(7,29,94,.7); border: 2px solid rgba(255,255,255,.65); box-shadow: 0 3px 0 #071449; font: 900 17px Nunito; }.dpad { display: flex; gap: 5px; }.dpad button { height: 47px; width: 47px; border-radius: 50%; }.jump { height: 57px; width: 76px; border-radius: 50%; color: #172562 !important; background: #ffda24 !important; border-color: #fff !important; font-size: 12px !important; }
+.tip { margin: 0; color: #b8dcff; text-align: center; font-size: 13px; letter-spacing: .3px; }
+@media (max-width: 600px) { .game-shell { padding: 10px; }.game-card { border-width: 2px; border-radius: 14px; }.hud { padding: 7px 11px; height: 57px; }.sound-button { display: none; }.mobile-controls { display: flex; }.tip { font-size: 11px; }.overlay { gap: 9px; }.how-to { display: none; } }
